@@ -180,6 +180,9 @@ section {
     height: 9rem;
   }
 
+  li:hover {
+    transition: all 2s;
+  }
   li:hover .list1 li {
     -webkit-animation-name: dropping;
             animation-name: dropping;
@@ -189,10 +192,12 @@ section {
 
   @-webkit-keyframes dropping {
     0% {
-      height: 0%;
+      height: 1%;
+      transform: rotatey(190deg);
     }
     33% {
       height: 33%;
+      transform: rotatey(0deg);
     }
     66% {
       height: 66%;
@@ -204,10 +209,12 @@ section {
 
   @keyframes dropping {
     0% {
-      height: 0%;
+      height: 1%;
+      transform: rotatey(190deg);
     }
     33% {
       height: 33%;
+      transform: rotatey(0deg);
     }
     66% {
       height: 66%;
