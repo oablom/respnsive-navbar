@@ -1,0 +1,219 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: url(../Images/forest.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(105, 105, 105, 0.5);
+  color: white;
+  border-radius: 8px;
+  min-height: 4rem;
+  padding: 1rem;
+  width: 70%;
+}
+
+.navbar-title {
+  font-size: 2rem;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+.navbar-title h1 {
+  margin: 0px;
+}
+
+.navbar-links ul {
+  display: flex;
+  list-style: none;
+}
+.navbar-links ul li:hover {
+  background-color: black;
+  border-radius: 8px;
+}
+.navbar-links ul li:hover .list1 li .dropdown-link {
+  color: white;
+  transition: 0.5s;
+}
+.navbar-links ul li:hover .list1 li {
+  visibility: visible;
+  background-color: rgba(105, 105, 105, 0.9);
+  color: black;
+  transition: 0.5s;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.navbar-links ul li:hover .list1 li :hover {
+  color: black;
+  border-radius: 8px;
+}
+.navbar-links ul li .dropdown {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  font-family: "Open Sans Condensed", sans-serif;
+  margin: 1rem;
+}
+
+.list1 {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 11rem;
+  padding: 20px;
+  transform: translate(-16%, -13%);
+}
+.list1 li a {
+  margin: 5px;
+}
+.list1 .dropdown-link {
+  color: transparent;
+  text-decoration: none;
+  font-size: 2rem;
+  font-family: "Open Sans Condensed", sans-serif;
+  margin: 1rem;
+}
+
+.navbar-hamburger {
+  position: absolute;
+  margin-top: 0.75rem;
+  right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 32px;
+  height: 32px;
+}
+.navbar-hamburger .bar {
+  width: 100%;
+  height: 6px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    width: 100%;
+  }
+  .navbar h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .navbar .navbar-links ul li a {
+    font-size: 1.5rem;
+    width: 32px;
+    min-height: 32px;
+  }
+
+  .navbar-links {
+    visibility: hidden;
+  }
+
+  .navbar.active {
+    flex-direction: column;
+  }
+  .navbar.active .navbar-links {
+    visibility: visible;
+  }
+  .navbar.active .navbar-links ul {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px;
+    padding: 0px;
+  }
+}
+@media (min-width: 500px) and (max-width: 1015px) {
+  .navbar-hamburger {
+    display: none;
+  }
+
+  .navbar {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .navbar h1 {
+    margin-bottom: 1rem;
+  }
+  .navbar .navbar-links ul {
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0px;
+    padding: 0px;
+    height: 10rem;
+  }
+  .navbar .navbar-links ul .list1 {
+    height: 7rem;
+  }
+}
+@media (min-width: 1015px) {
+  .navbar-hamburger {
+    display: none;
+  }
+
+  .list1 {
+    height: 9rem;
+  }
+
+  li:hover .list1 li {
+    -webkit-animation-name: dropping;
+            animation-name: dropping;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+  }
+
+  @-webkit-keyframes dropping {
+    0% {
+      height: 0%;
+    }
+    33% {
+      height: 33%;
+    }
+    66% {
+      height: 66%;
+    }
+    100% {
+      height: 100%;
+    }
+  }
+
+  @keyframes dropping {
+    0% {
+      height: 0%;
+    }
+    33% {
+      height: 33%;
+    }
+    66% {
+      height: 66%;
+    }
+    100% {
+      height: 100%;
+    }
+  }
+}/*# sourceMappingURL=index.css.map */
